@@ -1,0 +1,17 @@
+module jdbcPropertiesClass
+
+url: String(urlMatchesPattern)?
+user: String
+password: String?
+autoCommit: Boolean? = true
+loginTimeout: Duration? = 0.ms
+`oracle.jdbc.readTimeout`: Duration?
+
+//hidden urlRegex = Regex(#"([\w\.]+)@([\w\.]+)"#)
+hidden urlRegex = Regex(#"(jdbc:oracle:thin:)@(.*)"#)
+
+hidden urlMatchesPattern = (url) ->
+  if (!url.matches(urlRegex))
+    throw("Incorrect URL pattern")
+  else
+    true
