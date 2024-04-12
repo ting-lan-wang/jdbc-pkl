@@ -1,4 +1,4 @@
-module jdbcPropertiesClass
+module jdbcPropertiesTemplate
 
 url: String(urlMatchesPattern)?
 user: String
