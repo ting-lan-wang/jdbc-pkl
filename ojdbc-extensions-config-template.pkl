@@ -1,0 +1,23 @@
+module ojdbcExtensionsConfigTemplate
+
+connect_descriptor: String?
+
+user: String?
+
+password {
+  type: String
+  value: String
+}?
+
+jdbc {
+  autoCommit: Boolean? = true
+  loginTimeout: Duration? = 0.ms
+  `oracle.jdbc.readTimeout`: Duration?
+}?
+
+wallet_location {
+  type: String
+  value: String
+}?
+
+config_time_to_live: Duration?
